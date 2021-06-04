@@ -1,0 +1,58 @@
+;
+;	File 'topol.top' was generated
+;	By user: viniciusp (1175)
+;	On host: kahuna
+;	At date: Wed Mar  6 17:30:59 2019
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.3 (-:
+;	
+;	Executable:   /softwares/gromacs/gromacs-2018.3-cuda/bin/gmx
+;	Data prefix:  /softwares/gromacs/gromacs-2018.3-cuda
+;	Working dir:  /home/viniciusp/VSIL
+;	Command line:
+;	  gmx pdb2gmx -f 1UBQ.pdb -o ubq_new.pdb
+;	Force field was read from the standard GROMACS share directory.
+;
+
+#define _FF_OPLS
+#define _FF_OPLSAA
+
+; Include forcefield parameters
+#include "oplsaa.ff/forcefield.itp"
+
+;;;LOAD ATOM TYPES
+#include "/home/viniciusp/VSIL/ITP/AN1_atomtypes_VSIL.itp"
+#include "/home/viniciusp/VSIL/ITP/CA1_atomtypes_VSIL.itp"
+
+
+;;;LOAD MOLECULES *.itp
+#include "/home/viniciusp/VSIL/ITP/AN1_VSIL.itp"
+#include "/home/viniciusp/VSIL/ITP/CA1_VSIL.itp"
+
+
+; Include watear topology
+#include "oplsaa.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "oplsaa.ff/ions.itp"
+
+[ system ]
+; Name
+Ionic Liquid and water
+
+[ molecules ]
+; Compound        # number of molecules
+WATER              
+CA1               
+AN1
+

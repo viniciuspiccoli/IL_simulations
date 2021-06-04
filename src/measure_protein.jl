@@ -1,5 +1,6 @@
 #Function to measue the maximum dimensions (in each dimensions) of the protein
 
+ export measure_prot
 
  using DelimitedFiles
  function measure_prot(nome, side)
@@ -127,30 +128,45 @@
     nglu   = 0
     nasp   = 0 
 
-    mass=0
+    #mass=0
 
     marker = 0
 
     # O problema aqui é achar um jeito do arquivo pegar apenas a primeira letra que aparece!
     #
     #
- A =  "12abc"
-list = collect(A)
-findfirst(x->x=='a',list)
+
+ #   A =  "12abc"
+ #   list = collect(A)
+ #   findfirst(x->x=='a',list)
 
 
     for line in eachline(cfile)
       data = split(line) 
       if data[1] == "ATOM" || data[1] == "HEATOM"
 
-        if length(data[3]) !=1
-          name = data[3]
-          name = "$(name[1])"
-          index = findfirst(x->x==name, atnames)  
-        else
-          index = findfirst(x->x==data[3], atnames)  
-        end 
-        mass = mass  + atmass[index]
+     #   name=data[3]
+     #   println(name)
+     #  # if length(data[3]) !=1
+     #  #   name = "$(name[1])"
+     #  #   index = findfirst(x->x==name, atnames)  
+     #   if occursin("H", name)
+     #     index = findfirst(x->x=="H", atnames)
+     #     println("entrou")
+     #   elseif occursin("O", name)
+     #     index = findfirst(x->x=="O", atnames) 
+     #     println("entrou O")
+     #   elseif occursin("N", name)
+     #     index = findfirst(x->x=="N", atnames)
+     #     println("entrou N")
+     #   elseif occursin("C", name)
+     #     index = findfirst(x->x=="C", atnames) 
+     #     println("entrou C")
+     #   elseif occursin("S", name)
+     #     index = findfirst(x->x=="S", atnames) 
+     #     println("entrou S")
+     #   end
+     #   mass = mass  + atmass[index]
 
         if data[4]=="HIS" || data[4]=="HSD" && marker != data[6]
           nhis = nhis + 1 
@@ -174,6 +190,6 @@ findfirst(x->x=='a',list)
      
     charge = (nhis * 0)  + (narg * (+1)) + (nlys * (+1)) + (nglu * (-1)) + (nasp * (-1))
 
-    return bx , by, bz, charge, mass
+    return bx , by, bz, charge
   
   end

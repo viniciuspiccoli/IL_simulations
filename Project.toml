@@ -6,6 +6,7 @@ version = "0.1.0"
 [deps]
 ComplexMixtures = "6f35c628-ac57-5bae-8ea9-703a8964f6e9"
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"
 
 [compat]
 julia = "1"

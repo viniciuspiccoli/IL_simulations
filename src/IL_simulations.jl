@@ -1,5 +1,8 @@
 module IL_simulations
 
-# Write your package code here.
+
+  include("./system_data.jl")
+  include("./measure_protein.jl")
+  include("./n_calculation.jl")
 
 end
