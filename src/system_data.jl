@@ -1,10 +1,19 @@
 using Parameters
 
 struct Data_il
+
   Protein::String
   MMP::Float64
+
   cation::String
   anion::String
+
+  cat_atomtypes::String
+  cat_par::String
+
+  an_atomtypes::String
+  an_par::String
+
   
   MM::Float64  
   c::Float64

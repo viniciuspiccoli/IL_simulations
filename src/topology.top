@@ -1,66 +1,42 @@
+include("./dic_data.jl")
+
+top_dir=/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP
+input_dir=
 
 
-
-EU preciso de um script que pegue o artuqivo de topologia e faça as alterações pertinentes nele
-
-function
-
-      topa = open("topola.top","r+")
+function Topology(dict,file::String,top_dir, input_dir, data::Data_il, nions, nwat)
   
-      # number of lines !
-      nlines = 0
-      for line in eachline(topa)
-        nlines += 1
-      end
-  
-      close(topa)
-  
-      topa = open("topola.top","r+")
-      top = open("topol.top","w")
-      ntline = 0
-
-      for line in eachline(topa) 
-
-        ntline += 1
-      
-        if occursin("AN1",line) && ntline != nlines && ntline < nlines - 4 
-          println(top,replace(line,"AN1" => "$Nomean",count = 1))
-        elseif occursin("CA1",line) && ntline < nlines - 4 
-          println(top,replace(line,"CA1" => "$Nome",count = 1))
-        elseif occursin("AN2",line) && ntline < nlines - 4 
-          println(top,replace(line,"AN2" => "$Nomean2",count = 1))
-        elseif occursin("CA2",line) && ntline < nlines - 4 
-          println(top,replace(line,"CA2" => "$Nome2",count = 1))
-        elseif ntline == (nlines - 4)
-          println(top,replace(line,line => "SOL               $nwat",count = 1)) # 58 cristalization water molecules
-
-        # data for the ions
-                                                                                            
-        elseif ntline == (nlines - 1)
-          if Nomean == "DCA"
-            println(top,replace(line,line => "NC                $nil",count = 1)) 
-          elseif Nomean == "BF4"
-            println(top,replace(line,line => "BF4                $nil",count = 1))
-          elseif Nomean == "NO3"    
-            println(top,replace(line,line => "NO3                $nil",count = 1))
-          end                                                                                      
-        elseif ntline == (nlines - 3) 
-          println(top,replace(line,line => "$(Nome[1:3])                $(2*nil) ",count = 1))          
-        elseif ntline == (nlines - 2)
-          if Nomean2 == "DCA"
-            println(top,replace(line,line => "NC                $nil",count = 1)) 
-          elseif Nomean2 == "BF4"
-            println(top,replace(line,line => "BF4                $nil",count = 1))
-          elseif Nomean2 == "NO3" 
-            println(top,replace(line,line => "NO3                $nil",count = 1))
-          end  
-       # elseif  ntline == nlines
-       #   println(top,replace(line,line => "$(Nome2[1:3])                $nil ",count = 1))        
-        else
-          println(top,line)
-        end
-      end
-      close(top)
-      close(topa)
-  
+  anion  = data.anion
+  cation = data.cation
+  file = open("$top_dir/topol.top","r")
+   
+  nlines = countlines(file)      # number of lines of the original topol.top
+  topol  = open("topol.top","w") # creation of the topol.top wichi will be used in the simulations
+ 
+  n = 0
+  for line in eachline(file)
+     n = n + 1
+     if n==19
+       println(topol,"#define _FF_OPLS")
+       println(topol,"#define _FF_OPLSAA")
+     elseif n==26
+       println("   ")
+       println(topol,"$top_dir/$(data.cat_atomtypes)")
+       println(topol,"$top_dir/$(data.cat_par)")
+       println(topol,"$top_dir/$(data.an_atomtypes)")
+       println(topol,"$top_dir/$(data.an_par)")
+     elseif n>19 && n != 26 && occursin("SOL",line)==false
+       println(topol, line)
+     elseif occursin("SOL",line)==true
+       println(topol,line)
+       println(topol,"SOL                $nwater")
+       println(topol,"$(dict[anion])                $nions")	
+       println(topol,"$(dict[cation])                $nions")
+     end
   end
+
+  close(file)
+  close(topol)
+
+ 
+end
