@@ -104,9 +104,9 @@
     end
    
     ## Box size
-    bx = round(Int,((xmax - xmin) + side + side)/2) 
-    by = round(Int,((ymax - ymin) + side + side)/2)
-    bz = round(Int,((zmax - zmin) + side + side)/2)
+    bx = round(Int,((xmax - xmin) + side + side)) 
+    by = round(Int,((ymax - ymin) + side + side))
+    bz = round(Int,((zmax - zmin) + side + side))
     
     close(file)  
 
