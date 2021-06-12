@@ -4,6 +4,6 @@ module IL_simulations
   include("./conc_calc.jl")
   include("./measure_protein.jl")
   include("./write_pack_input.jl")
-
+  include("./topology.jl")
 
 end

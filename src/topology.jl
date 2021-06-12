@@ -1,15 +1,14 @@
 include("./dic_data.jl")
 
-top_dir=/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP
-input_dir=
 
+export Topology
 
 function Topology(dict,file::String,top_dir, input_dir, data::Data_il, nions, nwat)
   
   anion  = data.anion
   cation = data.cation
-  file = open("$top_dir/topol.top","r")
-   
+  file = open("$top_dir/topol.top","r")   
+
   nlines = countlines(file)      # number of lines of the original topol.top
   topol  = open("topol.top","w") # creation of the topol.top wichi will be used in the simulations
  
@@ -37,6 +36,5 @@ function Topology(dict,file::String,top_dir, input_dir, data::Data_il, nions, nw
 
   close(file)
   close(topol)
-
  
 end

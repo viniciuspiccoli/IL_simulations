@@ -7,7 +7,16 @@ export number_of_ions
 include("./measure_protein.jl")
 
 # One IL + Protein + Water
-function number_of_ions(protein, MMP, cation1, anion1, MM1, c; cube=false, charge=false)
+function number_of_ions(data::Data_IL; cube=false, charge=false)
+
+  protein = data.protein
+  MMP = data.MMP 
+
+  cation1 = data.cation 
+  anion1  = data.anion
+
+  MM1  = data.MM
+  c    = data.c
 
   vprot = (MMP / 6.02e23) * 1e-3 
   if cube==false
@@ -40,14 +49,6 @@ function number_of_ions(protein, MMP, cation1, anion1, MM1, c; cube=false, charg
 
 end
 
-
-MM1     =  201.06
-MMP     =  8560
-cation1 = "BMIM"
-anion1  = "NO3"
-c       =  0.50
-
-number_of_ions("ubq.pdb", MMP, cation1, anion1, MM1, c; cube=false)
 
 
 # IL + Water

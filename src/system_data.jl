@@ -1,19 +1,17 @@
 using Parameters
 
-struct Data_il
-
+@with_kw Struct Data_il
   Protein::String
   MMP::Float64
 
   cation::String
   anion::String
 
-  cat_atomtypes::String
-  cat_par::String
+  cat_atomtypes="$(cation)_atomtypes_VSIL.itp"
+  cat_par="$(cation)_VSIL.itp"
 
-  an_atomtypes::String
-  an_par::String
-
+  an_atomtypes="$(anion)_atomtypes_VSIL.itp"
+  an_par="$(anion)_VSIL.itp"
   
   MM::Float64  
   c::Float64
