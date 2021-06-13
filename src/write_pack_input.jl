@@ -73,7 +73,7 @@ function pack_input(cation, anion, nil, nwater, sides)
 end
 
 
-function pack_input(protein, cation, anion1, anion2, ncat, nan, nwater, nwater, sides)
+function pack_input(protein, cation, anion1, anion2, ncat, nan, nwater, sides)
 
   lx = sides[1]
   ly = sides[2]
@@ -119,7 +119,7 @@ end
 
 
 
-function pack_input(cation, anion1, anion2, ncat, nan, nwater, nwater, sides)
+function pack_input(cation, anion1, anion2, ncat, nan, nwater, sides)
 
   lx = sides[1]
   ly = sides[2]

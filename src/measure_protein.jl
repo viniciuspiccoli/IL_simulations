@@ -1,9 +1,6 @@
 #Function to measue the maximum dimensions (in each dimensions) of the protein
-
- export measure_prot
-
- using DelimitedFiles
- function measure_prot(nome, side)
+  export measure_prot
+  function measure_prot(nome, side)
   
   ## Variables - Measurement of the protein(X, Y and Z axis)
     pdbfile = nome

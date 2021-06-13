@@ -4,10 +4,8 @@
 
 export number_of_ions
 
-include("./measure_protein.jl")
-
 # One IL + Protein + Water
-function number_of_ions(data::Data_IL; cube=false, charge=false)
+function number_of_ions(data; cube=false, charge=false)
 
   protein = data.protein
   MMP = data.MMP 

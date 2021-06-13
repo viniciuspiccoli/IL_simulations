@@ -3,14 +3,14 @@ include("./dic_data.jl")
 
 export Topology
 
-function Topology(dict,file::String,top_dir, input_dir, data::Data_il, nions, nwat)
+function Topology(dict,top_dir, prot_dir, data, nions, nwat)
   
   anion  = data.anion
   cation = data.cation
-  file = open("$top_dir/topol.top","r")   
+  file = open("$prot_dir/topol.top","r")   
 
   nlines = countlines(file)      # number of lines of the original topol.top
-  topol  = open("topol.top","w") # creation of the topol.top wichi will be used in the simulations
+  topol  = open("topol.top","w") # creation of the topol.top which will be used in the simulations
  
   n = 0
   for line in eachline(file)
