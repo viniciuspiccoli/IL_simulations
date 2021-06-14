@@ -1,19 +1,20 @@
 
+
 @with_kw struct Data_il
-  Protein
-  MMP
+  protein::String
+  MMP::Float64
 
-  cation
-  anion
+  cation::String
+  anion::String
 
-  cat_atomtypes="$(cation)_atomtypes_VSIL.itp"
-  cat_par="$(cation)_VSIL.itp"
+  MM::Float64  
+  c::Float64
 
-  an_atomtypes="$(anion)_atomtypes_VSIL.itp"
-  an_par="$(anion)_VSIL.itp"
-  
-  MM  
-  c
+  cat_atomtypes::String = "$(cation)_atomtypes_VSIL.itp"
+  cat_par::String = "$(cation)_VSIL.itp"
+
+  an_atomtypes::String = "$(anion)_atomtypes_VSIL.itp"
+  an_par::String = "$(anion)_VSIL.itp" 
 end
 
 struct Data_2il

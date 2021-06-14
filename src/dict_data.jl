@@ -1,5 +1,6 @@
 # Dictionary with resnames for ionic liquids 
 
+export dict
 dict = Dict( "DCA" => "NC" ,
              "BF4" => "BF4",
              "NO3" => "NO3",

@@ -28,7 +28,7 @@ function number_of_ions(data; cube=false, charge=false)
   sides = [lx, ly, lz]
 
   vtotal = lx*ly*lz*1.e-27                                      # volume in L
-  vsol = vprot - vtotal                                         # solution volume = volume of the box  - volume of the protein / L   
+  vsol = - vprot + vtotal                                         # solution volume = volume of the box  - volume of the protein / L   
   nions = round(Int64, vsol * c * 6.02e23)                      # number of ions 
   vions = nions * MM1 * 1.e-3 / (6.02e23)                       # volume occupied by the ions
   nwater = round(Int64,(vsol - vions) * 6.02e23 / (18*1.e-3))   # number of water molecules to fill the box
@@ -39,11 +39,6 @@ function number_of_ions(data; cube=false, charge=false)
     return nions, nwater, charge, sides
   end
 
-  println("###############################")
-  println("Concentration = $c")
-  println("Number of water molecular = $nwater")
-  println("Number of cations = $(nions)")
-  println("Number of anions  = $(nions)")
 
 end
 

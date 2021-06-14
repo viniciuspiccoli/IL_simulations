@@ -4,6 +4,7 @@ module IL_simulations
   using DelimitedFiles
   using PDBTools
 
+  include("dict_data.jl")
   include("./system_data.jl")
   include("./conc_calc.jl")
   include("./measure_protein.jl")

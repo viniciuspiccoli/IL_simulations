@@ -110,9 +110,9 @@
 
     # atom mass
     # problema com o diretório
-    mdata   = readdlm("atoms_mass.txt")
-    atnames = mdata[:,1]  
-    atmass  = mdata[:,2] 
+  #  mdata   = readdlm("atoms_mass.txt")
+  #  atnames = mdata[:,1]  
+  #  atmass  = mdata[:,2] 
 
 
     cfile = open("$pdbfile","r+")
