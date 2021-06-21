@@ -2,6 +2,13 @@ export pack_input
 
 # one il + protein + water  
 function pack_input(data, pdb_dir::String, nil, nwater, sides)
+
+
+# println("""
+#    teste
+#    teste
+# """)
+
   
   protein = data.protein
   cation  = data.cation
