@@ -21,9 +21,9 @@ function top(dict,top_dir, prot_dir, data, nions, nwater)
        println(topol,"#include \"$top_dir/$(data.an_atomtypes)\" ")
        println(topol,"#include \"$top_dir/$(data.an_par)\" ")
        println(topol,"             ")
-     elseif n>19 && n != 22 && occursin("sol",line)==false
+     elseif n>19 && n != 22 && occursin("SOL",line)==false
        println(topol, line)
-     elseif occursin("sol",line)==true
+     elseif occursin("SOL",line)==true
        println(topol,line)
        println(topol,"SOL                $nwater")
        println(topol,"$(dict[anion])                $nions")	

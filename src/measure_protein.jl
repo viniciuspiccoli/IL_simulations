@@ -107,14 +107,6 @@
     
     close(file)  
 
-
-    # atom mass
-    # problema com o diretório
-  #  mdata   = readdlm("atoms_mass.txt")
-  #  atnames = mdata[:,1]  
-  #  atmass  = mdata[:,2] 
-
-
     cfile = open("$pdbfile","r+")
 
     # charge calculation
@@ -129,42 +121,10 @@
 
     marker = 0
 
-    # O problema aqui é achar um jeito do arquivo pegar apenas a primeira letra que aparece!
-    #
-    #
-
- #   A =  "12abc"
- #   list = collect(A)
- #   findfirst(x->x=='a',list)
-
 
     for line in eachline(cfile)
       data = split(line) 
       if data[1] == "ATOM" || data[1] == "HEATOM"
-
-     #   name=data[3]
-     #   println(name)
-     #  # if length(data[3]) !=1
-     #  #   name = "$(name[1])"
-     #  #   index = findfirst(x->x==name, atnames)  
-     #   if occursin("H", name)
-     #     index = findfirst(x->x=="H", atnames)
-     #     println("entrou")
-     #   elseif occursin("O", name)
-     #     index = findfirst(x->x=="O", atnames) 
-     #     println("entrou O")
-     #   elseif occursin("N", name)
-     #     index = findfirst(x->x=="N", atnames)
-     #     println("entrou N")
-     #   elseif occursin("C", name)
-     #     index = findfirst(x->x=="C", atnames) 
-     #     println("entrou C")
-     #   elseif occursin("S", name)
-     #     index = findfirst(x->x=="S", atnames) 
-     #     println("entrou S")
-     #   end
-     #   mass = mass  + atmass[index]
-
         if data[4]=="HIS" || data[4]=="HSD" && marker != data[6]
           nhis = nhis + 1 
           marker = data[6]

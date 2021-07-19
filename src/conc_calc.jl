@@ -11,10 +11,10 @@
 # checar diferente métodos para calcular a concentração
 
 
-export number_of_ions
+export prot_elec
 
 # One IL + Protein + Water
-function number_of_ions(data; cube=false, charge=false)
+function prot_elec(data; cube=false, charge=false)
 
   protein = data.protein
   MMP = data.MMP 
@@ -25,14 +25,18 @@ function number_of_ions(data; cube=false, charge=false)
   MM1  = data.MM
   c    = data.c
 
-  vprot = (MMP / 6.02e23) * 1e-3 
-  if cube==false
-    lx,ly,lz = measure_prot(protein,30)  
-  elseif cube==true
-    lx = 90
-    ly = 90 
-    lz = 90
-  end    
+  vprot = (MMP / 6.02e23) * 1e-3
+
+  ### decidir aqui a melhore forma de calcular as caixas
+ 
+ 
+#  if cube==false
+#    lx,ly,lz = measure_prot(protein,30)  
+#  elseif cube==true
+    lx = 95
+    ly = 95 
+    lz = 95
+#  end    
 
   sides = [lx, ly, lz]
 
@@ -51,9 +55,9 @@ function number_of_ions(data; cube=false, charge=false)
 end
 
 
-
+export sol_elec
 # One IL + Water
-function number_of_ions(data)
+function sol_elec(data)
 
   cation1 = data.cation 
   anion1  = data.anion
@@ -77,9 +81,9 @@ function number_of_ions(data)
 end
 
 
-
+export prot_melec
 # two IL + Protein + Water
-function number_of_ions(data; cube=false, charge=false)
+function prot_melec(data; cube=false, charge=false)
 
   protein = data.protein
   MMP = data.MMP 
@@ -93,13 +97,13 @@ function number_of_ions(data; cube=false, charge=false)
   c    = data.c
 
   vprot = (MMP / 6.02e23) * 1e-3 
-  if cube==false
-    lx,ly,lz = measure_prot(protein,30)  
-  elseif cube==true
+#  if cube==false
+#    lx,ly,lz = measure_prot(protein,30)  
+#  elseif cube==true
     lx = 90
     ly = 90 
     lz = 90
-  end    
+#  end    
 
   sides = [lx, ly, lz]
 
@@ -121,9 +125,10 @@ function number_of_ions(data; cube=false, charge=false)
 
 end
 
+export sol_melec
 
 # two IL +  Water
-function number_of_ions(data; cube=false, charge=false)
+function sol_melec(data; cube=false, charge=false)
   cation1 = data.cation 
   anion1  = data.anion1
   anion2  = data.anion2 
