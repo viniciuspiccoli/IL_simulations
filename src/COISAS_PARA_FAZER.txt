@@ -1,3 +1,2 @@
-1 - Trocar a função measure_prot pelo PDBTools
 2 - Montar script para calcular MDDFS e KBIs usando Julia e não o programa em fortran
 3 - Testar a montagem dos sistemas
