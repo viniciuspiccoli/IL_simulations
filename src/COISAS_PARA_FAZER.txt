@@ -1,2 +1,8 @@
 2 - Montar script para calcular MDDFS e KBIs usando Julia e não o programa em fortran
 3 - Testar a montagem dos sistemas
+
+
+Ver a questão de como calcular as quantidades de água e de íons iniciais
+
+artigo - Densities of Aqueous Electrolyte Solutions. A Model for a Data
+Bank

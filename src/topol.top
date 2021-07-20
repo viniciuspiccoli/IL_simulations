@@ -1,0 +1,35 @@
+#define _FF_OPLS
+#define _FF_OPLSAA
+
+; Include forcefield parameters
+#include "oplsaa.ff/forcefield.itp"
+
+      
+; load atom types and molecules
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/BMIM_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/BMIM_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/NO3_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/NO3_VSIL.itp" 
+             
+; Include water topology
+#include "oplsaa.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "oplsaa.ff/ions.itp"
+
+[ system ]
+; Name
+Electrolyte solution
+
+[ molecules ]
+; Compound        nmols 
+SOL                4091
+NO3                8
+BMI                8

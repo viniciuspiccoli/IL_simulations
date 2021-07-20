@@ -121,12 +121,45 @@ for il in ils # loop through the ionic liquids
   end
 end
 
+------------------------------------------------------------------------------------
+
+
+# Aqui eu preciso terminar esse script para receber os dados da simulação e criar um input para calcular MDDF e KBI
+# 
+#
+
+function make_CMrun(data, systemPDB, solute, nslt, solvent, nsvt)
+
+  open("analysis.jl","w")
+
+  an  = data.anion
+  cat = data.cation
+
+
+  using PDBTools, ComplexMixtures
+  atoms   = readPDB(systemPDB)
+  prot    = select(atoms,solute)
+  solv    = select(atoms,solvent)
+  solute  = Selection(prot,nmols=nslt)
+  solvent = Selection(solv,natomspermol=nsvt)
+
+  options = CM.Options(dbulk=20.,GC=true,GC_threshold=0.5)
+  trajectory = Trajectory("processed.xtc",solute,solvent)
+  results = mddf(trajectory, options)
+
+  save(results,"data_$().json")
+
+  write(results,"gmd_$(il[5:7])_$(il[8:10])_$c.dat")
 
 
 
+end
 
 
-
+ println("""
+    teste
+    teste
+ """)
 
 
 

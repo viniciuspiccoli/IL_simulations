@@ -52,7 +52,7 @@ end
 
 
 # one il + water  
-function pack_input(data, pdb_dir::String, nil, nwater, sides)
+function pack_input_sol(data, pdb_dir::String, nil, nwater, sides)
   
   cation  = data.cation
   anion   = data.anion
@@ -142,7 +142,7 @@ end
 
 
 # two ils + water
-function pack_input(data, pdb_dir::String, ncat, nan, nwater, sides)
+function pack_input(data, pdb_dir::String, ncat, nan, nwater, sides, sol=false)
   
   cation  = data.cation
   anion   = data.anion

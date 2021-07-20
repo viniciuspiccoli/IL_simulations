@@ -38,7 +38,6 @@ end
   an2_atomtypes::String = "$(anion2)_atomtypes_VSIL.itp"
   an2_par::String = "$(anion2)_VSIL.itp" 
 
-
 end
 
 @with_kw struct Data_elec
