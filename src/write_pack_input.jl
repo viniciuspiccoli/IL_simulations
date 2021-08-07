@@ -3,13 +3,7 @@ export pack_input
 # one il + protein + water  
 function pack_input(data, pdb_dir::String, nil, nwater, sides)
 
-
-# println("""
-#    teste
-#    teste
-# """)
-
-  
+ 
   protein = data.protein
   cation  = data.cation
   anion   = data.anion
@@ -95,7 +89,7 @@ function pack_input(data, pdb_dir::String, ncat, nan, nwater, sides)
   
   protein = data.protein
   cation  = data.cation
-  anion   = data.anion
+  anion   = data.anion1
   anion2  = data.anion2
 
   lx = round(Int64,sides[1] / 2)
@@ -130,7 +124,7 @@ function pack_input(data, pdb_dir::String, ncat, nan, nwater, sides)
   println(io," inside box -$(lx). -$(ly). -$(lz). $(lx). $(ly). $(lz).")
   println(io,"end structure")
   println(io,"                  ") 
-  println(io,"structure $pdb2_dir/$(anion2)_VSIL.pdb")
+  println(io,"structure $pdb_dir/$(anion2)_VSIL.pdb")
   println(io," number $nan")
   println(io," inside box -$(lx). -$(ly). -$(lz). $(lx). $(ly). $(lz).")
   println(io,"end structure")
@@ -142,10 +136,10 @@ end
 
 
 # two ils + water
-function pack_input(data, pdb_dir::String, ncat, nan, nwater, sides, sol=false)
+function pack_input_elec(data, pdb_dir::String, ncat, nan, nwater, sides)
   
   cation  = data.cation
-  anion   = data.anion
+  anion   = data.anion1
   anion2  = data.anion2
 
   lx = round(Int64,sides[1] / 2)
@@ -174,7 +168,7 @@ function pack_input(data, pdb_dir::String, ncat, nan, nwater, sides, sol=false)
   println(io," inside box -$(lx). -$(ly). -$(lz). $(lx). $(ly). $(lz).")
   println(io,"end structure")
   println(io,"                  ") 
-  println(io,"structure $pdb2_dir/$(anion2)_VSIL.pdb")
+  println(io,"structure $pdb_dir/$(anion2)_VSIL.pdb")
   println(io," number $nan")
   println(io," inside box -$(lx). -$(ly). -$(lz). $(lx). $(ly). $(lz).")
   println(io,"end structure")

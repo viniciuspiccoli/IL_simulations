@@ -1,5 +1,4 @@
 ; title                   = OPLS Ubiquitin solvated by water with a ionicliquid being a cosolute NVT equilibration 
-define                  = -DPOSRES  ; position restrain the protein
 ; Run parameters
 integrator              = md        ; leap-frog integrator
 nsteps                  = 500000     ; 2 * 50000 = 1000 ps
@@ -29,9 +28,9 @@ pme_order               = 4         ; cubic interpolation
 fourierspacing          = 0.16      ; grid spacing for FFT
 ; Temperature coupling is on
 tcoupl                  = V-rescale             ; modified Berendsen thermostat
-tc-grps                 = Protein Non-Protein   ; two coupling groups - more accurate
-tau_t                   = 0.1     0.1           ; time constant, in ps
-ref_t                   = 300     300           ; reference temperature, one for each group, in K
+tc-grps                 = System  
+tau_t                   = 0.1     
+ref_t                   = 300     
 ; Pressure coupling is off
 pcoupl                  = no        ; no pressure coupling in NVT
 ; Periodic boundary conditions
@@ -39,8 +38,4 @@ pbc                     = xyz       ; 3-D PBC
 ; Velocity generation
 gen_vel                 = yes       ; assign velocities from Maxwell distribution
 gen_temp                = 300       ; temperature for Maxwell distribution
-gen_seed                = -1        ; generate a random seed
-
-freezegrps              = Protein
-freezedim               = X Y Z
-
+gen_seed                = -1        ; generate a random seed 
