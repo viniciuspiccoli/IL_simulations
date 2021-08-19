@@ -33,9 +33,9 @@ function prot_elec(data; cube=false, charge=false)
 #  if cube==false
 #    lx,ly,lz = measure_prot(protein,30)  
 #  elseif cube==true
-    lx = 95
-    ly = 95 
-    lz = 95
+    lx = 94
+    ly = 94 
+    lz = 94
 #  end    
 
   sides = [lx, ly, lz]
@@ -100,9 +100,9 @@ function prot_melec(data; cube=false, charge=false)
 #  if cube==false
 #    lx,ly,lz = measure_prot(protein,30)  
 #  elseif cube==true
-    lx = 90
-    ly = 90 
-    lz = 90
+    lx = 94
+    ly = 94 
+    lz = 94
 #  end    
 
   sides = [lx, ly, lz]
