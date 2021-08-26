@@ -1,5 +1,7 @@
 #export top
 
+#### preciso editar essa funcação daqui
+
 # one IL + Protein + water
 function top(dict,top_dir, prot_dir, data, nions, nwater)
   anion  = data.anion
@@ -16,10 +18,10 @@ function top(dict,top_dir, prot_dir, data, nions, nwater)
      elseif n==22
        println(topol,"      ")
        println(topol,"; load atom types and molecules")
-       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
-       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an_atomtypes)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
        println(topol,"#include \"$top_dir/$(data.an_par)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"             ")
      elseif n>19 && n != 22 && occursin("SOL",line)==false
        println(topol, line)
@@ -48,12 +50,12 @@ function topelec(dict,top_dir, ionic_dir, data, ncat, nan, nwater)
      if n==7
        println(topol,"      ")
        println(topol,"; load atom types and molecules")
-       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
-       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an1_atomtypes)\" ")
-       println(topol,"#include \"$top_dir/$(data.an1_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an2_atomtypes)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
+       println(topol,"#include \"$top_dir/$(data.an1_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an2_par)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"             ")
      elseif  n != 7 && occursin("Compound",line)==false
        println(topol, line)
@@ -83,10 +85,10 @@ function topelec(dict,top_dir, ionic_dir, data, nions, nwater)
      if n==7
        println(topol,"      ")
        println(topol,"; load atom types and molecules")
-       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
-       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an_atomtypes)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
        println(topol,"#include \"$top_dir/$(data.an_par)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"             ")
      elseif  n != 7 && occursin("Compound",line)==false
        println(topol, line)
@@ -120,12 +122,12 @@ function top(dict,top_dir, prot_dir, data, ncat, nan, nwater)
      elseif n==22
        println(topol,"      ")
        println(topol,"; load atom types and molecules")
-       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
-       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an1_atomtypes)\" ")
-       println(topol,"#include \"$top_dir/$(data.an1_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an2_atomtypes)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_atomtypes)\" ")
+       println(topol,"#include \"$top_dir/$(data.an1_par)\" ")
        println(topol,"#include \"$top_dir/$(data.an2_par)\" ")
+       println(topol,"#include \"$top_dir/$(data.cat_par)\" ")
        println(topol,"             ")
      elseif n>19 && n != 22 && occursin("sol",line)==false
        println(topol, line)

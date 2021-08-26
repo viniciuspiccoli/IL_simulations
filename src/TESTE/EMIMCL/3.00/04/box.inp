@@ -11,16 +11,16 @@ structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.
 end structure
                   
 structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/WATER.pdb
- number 15759
- inside box -48. -48. -48. 48. 48. 48.
+ number 15262
+ inside box -47. -47. -47. 47. 47. 47.
 end structure
                   
 structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
- number 1520
- inside box -48. -48. -48. 48. 48. 48.
+ number 1471
+ inside box -47. -47. -47. 47. 47. 47.
 end structure
                   
 structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/Cl_VSIL.pdb
- number 1520
- inside box -48. -48. -48. 48. 48. 48.
+ number 1471
+ inside box -47. -47. -47. 47. 47. 47.
 end structure
