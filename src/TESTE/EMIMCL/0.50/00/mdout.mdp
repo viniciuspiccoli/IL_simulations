@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: unknown (1000)
 ;	On host: PC-A52-LIV
-;	At date: Thu Aug 26 16:53:29 2021
+;	At date: Fri Aug 27 15:51:27 2021
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2019.4 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /home/viniciusp/Documents/programs/gromacs-2019.4 (source tree)
 ;	Working dir:  /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/src/TESTE/EMIMCL/0.50/00
 ;	Command line:
-;	  gmx_mpi grompp -f mim.mdp -c system.pdb -p topol.top -o em.tpr -maxwarn 5
+;	  gmx_mpi grompp -f mim.mdp -c system.pdb -p topol.top -pp processed.top -o em.tpr -maxwarn 5
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -98,7 +98,7 @@ rlist                    = 1
 coulombtype              = PME
 coulomb-modifier         = Potential-shift-Verlet
 rcoulomb-switch          = 0
-rcoulomb                 = 1.0
+rcoulomb                 = 1.2
 ; Relative dielectric constant for the medium and the reaction field
 epsilon-r                = 1
 epsilon-rf               = 0
@@ -107,7 +107,7 @@ vdw-type                 = Cut-off
 vdw-modifier             = Potential-shift-Verlet
 ; cut-off lengths       
 rvdw-switch              = 0
-rvdw                     = 1.0
+rvdw                     = 1.2
 ; Apply long range dispersion corrections for Energy and Pressure
 DispCorr                 = No
 ; Extension of the potential lookup tables beyond the cut-off

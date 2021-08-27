@@ -1,0 +1,26 @@
+tolerance 2.0
+output system.pdb
+add_box_sides 1.0
+filetype pdb
+seed -1
+                  
+structure ubq.pdb
+ number 1
+ center
+ fixed 0. 0. 0. 0. 0. 0.
+end structure
+                  
+structure WATER.pdb
+ number 25065
+ inside box -46. -47. -49. 46. 47. 49.
+end structure
+                  
+structure BMIM_VSIL.pdb
+ number 251
+ inside box -46. -47. -49. 46. 47. 49.
+end structure
+                  
+structure NO3_VSIL.pdb
+ number 251
+ inside box -46. -47. -49. 46. 47. 49.
+end structure

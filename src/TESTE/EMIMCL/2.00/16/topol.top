@@ -5,10 +5,10 @@
 #include "oplsaa.ff/forcefield.itp"
       
 ; load atom types and molecules
-#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/Cl_atomtypes_VSIL.itp" 
-#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/EMIM_atomtypes_VSIL.itp" 
-#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/Cl_VSIL.itp" 
-#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/EMIM_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/NO3_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/BMIM_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/NO3_VSIL.itp" 
+#include "/home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/BMIM_VSIL.itp" 
              
 [ moleculetype ]
 ; Name            nrexcl
@@ -11632,6 +11632,6 @@ UBIQUITIN
 ; Compound        #mols
 Protein_chain_A     1
 SOL                58
-SOL                19254
-Cl                981
-EMI                981
+SOL                16278
+NO3                981
+BMI                981

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# precisa resolver o erro na criacao da caixa
+
 echo "NAME OF THE IONIC LIQUID "
 #DECIDIR SE É MELHOR PARTIRE DE UM PDB JÁ PROCESSADO NO PDB2GMX
 read il
