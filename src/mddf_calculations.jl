@@ -111,16 +111,9 @@
  using ComplexMixtures, PDBTools; const CM=ComplexMixtures
 
 function make_CMrun(data, systemPDB, natoms::Vector)
-
-
-  top(dict,top_dir, prot_dir, data, nions, nwater)
-
   io = open("analysis.jl","w")
-
-   an = data.anion
-   cat = data.cation 
-
-
+  an = data.anion
+  cat = data.cation 
   println(io,"""    
   using PDBTools, ComplexMixtures
 
@@ -140,7 +133,7 @@ function make_CMrun(data, systemPDB, natoms::Vector)
   water  = Selection(solv, natomspermol=3)
 
   # options for the calculation
-  options = CM.Options(dbulk=20.,GC=true,GC_threshold=0.5)
+  options = ComplexMixtures.Options(dbulk=20.,GC=true,GC_threshold=0.5)
 
   # cation calculation
   trajectory = Trajectory("processed.xtc",solute,solvent)
@@ -161,7 +154,19 @@ function make_CMrun(data, systemPDB, natoms::Vector)
 
 end
 
+# function that will aplly make_CMrun with data and the number of atoms of each solvent molecule
+function analyzeIN(pdb_dir, data)
 
-
+  cationPDB = "$(data.cation)_VSIL.pdb"
+  anionPDB  = "$(data.anion)_VSIL.pdb"
+  
+  ncation = PDBTools.readPDB("$pdb_dir/$cationPDB")
+  nanion  = PDBTools.readPDB("$pdb_dir/$anionPDB")
+  
+  protein = data.protein
+  systemPDB = "$(pdbdir)/$protein"
+  make_CMrun(data,systemPDB,[ncation, nanion])
+  
+end
 
 
