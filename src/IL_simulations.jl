@@ -11,5 +11,6 @@ module IL_simulations
   include("./measure_protein.jl")
   include("./write_pack_input.jl")
   include("./topology.jl")
+  include("./mddf_calculations.jl")
 
 end

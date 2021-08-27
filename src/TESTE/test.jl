@@ -41,6 +41,7 @@ for i in ["0.50", "1.00", "1.50", "2.00", "2.50", "3.00"]
     IL_simulations.top(dict, top_dir, input_dir, data, nions, nwater)
     IL_simulations.pack_input(data,pdb_dir,nions,nwater,sides)
     IL_simulations.mdp_files_solute()
+    IL_simulations.analyzeIN(pdb_dir,data)
   end
 end
 

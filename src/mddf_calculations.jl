@@ -108,7 +108,7 @@
 # PRECISO FAZER UM FUNÇÃO QUE PEGA MAKE_CMRUN E EXECUTA A PARTIR DOS DADOS
 # PRECISO DE UMA FUNCAÇÃO QUE CALCULA O NÚMERO DE ÁTOMOS DE CADA COMPONENTE
 #
- using ComplexMixtures, PDBTools; const CM=ComplexMixtures
+# using ComplexMixtures, PDBTools; const CM=ComplexMixtures
 
 function make_CMrun(data, systemPDB, natoms::Vector)
   io = open("analysis.jl","w")
@@ -123,7 +123,7 @@ function make_CMrun(data, systemPDB, natoms::Vector)
   solute  = Selection(prot,nmols=1)
 
   # selections for solvent components
-  solv    = select(atoms,"resname $(cat)")
+  solv    = select(atoms,"resname $(cat[1:3])")
   cation = Selection(solv, natomspermol=$(natoms[1]))
   
   solv    = select(atoms,"resname $(an)")
@@ -136,17 +136,17 @@ function make_CMrun(data, systemPDB, natoms::Vector)
   options = ComplexMixtures.Options(dbulk=20.,GC=true,GC_threshold=0.5)
 
   # cation calculation
-  trajectory = Trajectory("processed.xtc",solute,solvent)
+  trajectory = Trajectory("processed.xtc",solute,cation)
   results = mddf(trajectory, options)
-  write(results,"gmd_$(cat).dat")
+  write(results,"gmd_$(cat[1:3]).dat")
 
   # anion calculation
-  trajectory = Trajectory("processed.xtc",solute,solvent)
+  trajectory = Trajectory("processed.xtc",solute,anion)
   results = mddf(trajectory, options)
   write(results,"gmd_$(an).dat")
 
   # water calculation
-  trajectory = Trajectory("processed.xtc",solute,solvent)
+  trajectory = Trajectory("processed.xtc",solute,water)
   results = mddf(trajectory, options)
   write(results,"gmd_SOL.dat")
 
@@ -160,11 +160,11 @@ function analyzeIN(pdb_dir, data)
   cationPDB = "$(data.cation)_VSIL.pdb"
   anionPDB  = "$(data.anion)_VSIL.pdb"
   
-  ncation = PDBTools.readPDB("$pdb_dir/$cationPDB")
-  nanion  = PDBTools.readPDB("$pdb_dir/$anionPDB")
+  ncation = length(PDBTools.readPDB("$pdb_dir/$cationPDB"))
+  nanion  = length(PDBTools.readPDB("$pdb_dir/$anionPDB"))
   
   protein = data.protein
-  systemPDB = "$(pdbdir)/$protein"
+  systemPDB = "$(pdb_dir)/$protein"
   make_CMrun(data,systemPDB,[ncation, nanion])
   
 end
