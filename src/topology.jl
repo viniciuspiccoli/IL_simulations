@@ -28,8 +28,8 @@ function top(dict,top_dir, prot_dir, data, nions, nwater)
      elseif occursin("SOL",line)==true
        println(topol,line)
        println(topol,"SOL                $nwater")
-       println(topol,"$(dict[anion])                $nions")	
        println(topol,"$(dict[cation])                $nions")
+       println(topol,"$(dict[anion])                $nions")	
      end
   end
   close(file)
@@ -62,9 +62,9 @@ function topelec(dict,top_dir, ionic_dir, data, ncat, nan, nwater)
      elseif occursin("Compound",line)==true
        println(topol,line)
        println(topol,"SOL                $nwater")
+       println(topol,"$(dict[cation])                $ncat")
        println(topol,"$(dict[anion1])                $nan")
        println(topol,"$(dict[anion2])                $nan")
-       println(topol,"$(dict[cation])                $ncat")
      end
   end
   close(file)
@@ -95,8 +95,8 @@ function topelec(dict,top_dir, ionic_dir, data, nions, nwater)
      elseif occursin("Compound",line)==true
        println(topol,line)
        println(topol,"SOL                $nwater")
-       println(topol,"$(dict[anion])                $nions")
        println(topol,"$(dict[cation])                $nions")
+       println(topol,"$(dict[anion])                $nions")
      end
   end
   close(file)
@@ -134,9 +134,9 @@ function top(dict,top_dir, prot_dir, data, ncat, nan, nwater)
      elseif occursin("sol",line)==true
        println(topol,line)
        println(topol,"SOL                $nwater")
+       println(topol,"$(dict[cation])                $ncat")
        println(topol,"$(dict[anion1])                $nan")	
        println(topol,"$(dict[anion2])                $nan")	
-       println(topol,"$(dict[cation])                $ncat")
      end
   end
   close(file)

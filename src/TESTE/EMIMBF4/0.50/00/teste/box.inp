@@ -12,15 +12,15 @@ end structure
                   
 structure WATER.pdb
  number 25065
- inside box -46. -47. -49. 46. 47. 49.
+ inside box -45. -45. -45. 45. 45. 45.
 end structure
                   
 structure BMIM_VSIL.pdb
  number 251
- inside box -46. -47. -49. 46. 47. 49.
+ inside box -45. -45. -45. 45. 45. 45.
 end structure
                   
 structure NO3_VSIL.pdb
  number 251
- inside box -46. -47. -49. 46. 47. 49.
+ inside box -45. -45. -45. 45. 45. 45.
 end structure

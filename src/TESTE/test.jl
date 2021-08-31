@@ -28,13 +28,14 @@ c       =  0.10
 #cd("PONEIL")
 #newil = EMIMCL
 
-cation = "BMIM"
-anion  = "NO3"
+cation = "EMIM"
+anion  = "Cl"
+il = "$(cation)$(anion)"
 MMIL = molarmass(anion, cation, pdb_dir)
 dir = pwd();
 for i in ["0.50", "1.00", "1.50", "2.00", "2.50", "3.00"]
   for j in ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19","20"]
-    cd("$dir/BMIMNO3/$i/$j")
+    cd("$dir/$il/$i/$j")
     conc = parse(Float64,i) 
     data = IL_simulations.Data_il(protein="$input_dir/ubq.pdb", MMP = MMP, cation = cation, anion = anion,MM = MMIL,c=conc)
     nions, nwater, sides = prot_elec(data)

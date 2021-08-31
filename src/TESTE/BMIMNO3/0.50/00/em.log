@@ -30,9 +30,9 @@ GROMACS:      gmx mdrun, version 2019.4
 Executable:   /home/viniciusp/Documents/programs/gromacs-2019.4/build/bin/gmx_mpi
 Data prefix:  /home/viniciusp/Documents/programs/gromacs-2019.4 (source tree)
 Working dir:  /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/src/TESTE/BMIMNO3/0.50/00
-Process ID:   58546
+Process ID:   29561
 Command line:
-  gmx_mpi mdrun -deffnm em
+  gmx_mpi mdrun -v -deffnm em
 
 GROMACS version:    2019.4
 Precision:          single
@@ -150,7 +150,7 @@ Input Parameters:
    comm-mode                      = Linear
    nstcomm                        = 100
    bd-fric                        = 0
-   ld-seed                        = 1230991198
+   ld-seed                        = 108735760
    emtol                          = 100
    emstep                         = 0.01
    niter                          = 20
@@ -337,7 +337,7 @@ Source file: src/gromacs/pbcutil/mshift.cpp (line 917)
 Fatal error:
 There are inconsistent shifts over periodic boundaries in a molecule type
 consisting of 26 atoms. The longest distance involved in such interactions is
-7.140 nm which is above half the box length. This molecule type consists of
+6.514 nm which is above half the box length. This molecule type consists of
 muliple parts, e.g. monomers, that are connected by interactions that are not
 chemical bonds, e.g. restraints. Such systems can not be treated. The only
 solution is increasing the box size.

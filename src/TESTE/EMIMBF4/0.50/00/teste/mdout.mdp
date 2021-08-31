@@ -1,8 +1,8 @@
 ;
 ;	File 'mdout.mdp' was generated
-;	By user: viniciusp (1000)
+;	By user: unknown (1000)
 ;	On host: PC-A52-LIV
-;	At date: Fri Aug 27 16:59:02 2021
+;	At date: Mon Aug 30 16:08:11 2021
 ;
 ;	Created by:
 ;	                     :-) GROMACS - gmx grompp, 2019.4 (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /home/viniciusp/Documents/programs/gromacs-2019.4 (source tree)
 ;	Working dir:  /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/src/TESTE/EMIMBF4/0.50/00/teste
 ;	Command line:
-;	  gmx_mpi grompp -f mim.mdp -c system.pdb -p processed.top -o em.tpr -maxwarn 5
+;	  gmx_mpi grompp -f mim.mdp -c system.pdb -p topol.top -o em.tpr -maxwarn 5
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
