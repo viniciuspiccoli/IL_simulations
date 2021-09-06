@@ -1,6 +1,21 @@
+function posre(topdir)
+ # posre.itp file
+  file   = open("$topdir/posre.itp","r+")
+  file_new = open("./posre.itp","w")
+  for line in eachline(file)
+    println(file_new,line)
+  end
+  close(file)
+  close(file_new) 
+end
+
+
 ### functoin to print mdp_files
 
 function mdp_files_solute()
+  
+ 
+
   # minimization
   file = open("mim.mdp", "w")
   println(file,"""

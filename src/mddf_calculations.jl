@@ -58,7 +58,7 @@
 #        results_water = final_results(trajs,resultts_wat,solute,water,options)
 #        CM.save(results_water, "gmd_sol.json")
 #        CM.write(results_water,"gmd_sol_$c.dat")
-#      end
+#      en
 #
 #      # cation
 #      if isfile("gmd_$(il[1:3]).json")==false
@@ -118,8 +118,8 @@ function make_CMrun(data, systemPDB, natoms::Vector)
   using PDBTools, ComplexMixtures
 
   # basic selections
-  atoms   = readPDB(systemPDB)
-  prot    = select(atoms, "Protein")
+  atoms   = readPDB("$systemPDB")
+  prot    = select(atoms, "protein")
   solute  = Selection(prot,nmols=1)
 
   # selections for solvent components
@@ -154,6 +154,62 @@ function make_CMrun(data, systemPDB, natoms::Vector)
 
 end
 
+
+
+function make_CMrun2(data, systemPDB, natoms::Vector)
+  io = open("analysis.jl","w")
+  an1 = data.anion1
+  an2 = data.anion2
+  cat = data.cation 
+  println(io,"""    
+  using PDBTools, ComplexMixtures
+
+  # basic selections
+  atoms   = readPDB("$systemPDB")
+  prot    = select(atoms, "protein")
+  solute  = Selection(prot,nmols=1)
+
+  # selections for solvent components
+  solv    = select(atoms,"resname $(cat[1:3])")
+  cation = Selection(solv, natomspermol=$(natoms[1]))
+  
+  solv    = select(atoms,"resname $(an1)")
+  anion1  = Selection(solv, natomspermol=$(natoms[2]))
+  
+  solv    = select(atoms,"resname $(an2)")
+  anion2  = Selection(solv, natomspermol=$(natoms[3]))
+
+  solv    = select(atoms, "resname SOL")
+  water  = Selection(solv, natomspermol=3)
+
+  # options for the calculation
+  options = ComplexMixtures.Options(dbulk=20.,GC=true,GC_threshold=0.5)
+
+  # cation calculation
+  trajectory = Trajectory("processed.xtc",solute,cation)
+  results = mddf(trajectory, options)
+  write(results,"gmd_$(cat[1:3]).dat")
+
+  # anion 1 calculation
+  trajectory = Trajectory("processed.xtc",solute,anion1)
+  results = mddf(trajectory, options)
+  write(results,"gmd_$(an1).dat")
+
+  # anion 2 calculation
+  trajectory = Trajectory("processed.xtc",solute,anion2)
+  results = mddf(trajectory, options)
+  write(results,"gmd_$(an2).dat")
+
+  # water calculation
+  trajectory = Trajectory("processed.xtc",solute,water)
+  results = mddf(trajectory, options)
+  write(results,"gmd_SOL.dat")
+
+""")
+
+end
+
+
 # function that will aplly make_CMrun with data and the number of atoms of each solvent molecule
 function analyzeIN(pdb_dir, data)
 
@@ -163,10 +219,27 @@ function analyzeIN(pdb_dir, data)
   ncation = length(PDBTools.readPDB("$pdb_dir/$cationPDB"))
   nanion  = length(PDBTools.readPDB("$pdb_dir/$anionPDB"))
   
-  protein = data.protein
-  systemPDB = "$(pdb_dir)/$protein"
+  protein = data.protein #"processed.pdb"
+  systemPDB = "processed.pdb"     #"$(pdb_dir)/$protein"
   make_CMrun(data,systemPDB,[ncation, nanion])
   
 end
 
 
+# function that will aplly make_CMrun with data and the number of atoms of each solvent molecule
+function analyzeIN2(pdb_dir, data)
+
+  cationPDB = "$(data.cation)_VSIL.pdb"
+  anion1PDB = "$(data.anion1)_VSIL.pdb"
+  anion2PDB = "$(data.anion2)_VSIL.pdb"
+  
+  ncation = length(PDBTools.readPDB("$pdb_dir/$cationPDB"))
+  nanion1 = length(PDBTools.readPDB("$pdb_dir/$anion1PDB"))
+  nanion2  = length(PDBTools.readPDB("$pdb_dir/$anion2PDB"))
+
+  
+  protein = data.protein
+  systemPDB = "processed.pdb"             #"$(pdb_dir)/$protein"
+  make_CMrun2(data,systemPDB,[ncation, nanion1, nanion2])
+  
+end

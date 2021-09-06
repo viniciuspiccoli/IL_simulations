@@ -1,8 +1,8 @@
 ; title                   = OPLS Ubiquitin solvated by water with a ionicliquid being a cosolute NVT equilibration 
-define                  = -DPOSRES  ; position restrain the protein
+;define                  = -DPOSRES  ; position restrain the protein
 ; Run parameters
 integrator              = md        ; leap-frog integrator
-nsteps                  = 500000     ; 2 * 50000 = 1000 ps
+nsteps                  = 250000     ; 2 * 50000 = 1000 ps
 dt                      = 0.002     ; 2 fs
 ; Output control
 nstxout                 = 5000       ; save coordinates every 1.0 ps
@@ -41,6 +41,6 @@ gen_vel                 = yes       ; assign velocities from Maxwell distributio
 gen_temp                = 300       ; temperature for Maxwell distribution
 gen_seed                = -1        ; generate a random seed
 
-;freezegrps              = Protein
-;freezedim               = X Y Z
+freezegrps              = Backbone
+freezedim               = X Y Z
 

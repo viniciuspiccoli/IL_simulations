@@ -113,8 +113,11 @@ function prot_melec(data; cube=false, charge=false)
   vions = nions * MM1 * 1.e-3 / (6.02e23) + nions * MM2 * 1.e-3 / (6.02e23)                       # volume occupied by the ions
   nwater = round(Int64,(vsol - vions) * 6.02e23 / (18*1.e-3))   # number of water molecules to fill the box
 
-  ncat = nions
   nan = round(Int,(nions/2)) # same number of molecules for each anion = ncation/2
+  # adjustment of the nions - If ncat % 2 != 0 -> ncat = ncat + 1 - ncat must be 2 times greater than nan
+  ncat = 2 * nan
+
+
 
 
   if charge==false 

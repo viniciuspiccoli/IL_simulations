@@ -2,8 +2,8 @@
   using PDBTools, ComplexMixtures
 
   # basic selections
-  atoms   = readPDB(systemPDB)
-  prot    = select(atoms, "Protein")
+  atoms   = readPDB("processed.pdb")
+  prot    = select(atoms, "protein")
   solute  = Selection(prot,nmols=1)
 
   # selections for solvent components
