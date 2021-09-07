@@ -33,7 +33,7 @@ end
 cation = "EMIM"
 anion  = "Cl"
 il     = "$(cation)$(anion)"
-MMIL = molarmass(anion, cation, pdb_dir)
+MMIL = IL_simulations.molarmass(anion, cation, pdb_dir)
 dir = pwd();
 for i in ["0.50", "1.00", "1.50", "2.00", "2.50", "3.00"]
   for j in ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19","20"]

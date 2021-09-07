@@ -1,0 +1,26 @@
+tolerance 2.0
+output system.pdb
+add_box_sides 1.0
+filetype pdb
+seed -1
+                  
+structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/ubiquitin_files/ubq.pdb
+ number 1
+ center
+ fixed 0. 0. 0. 0. 0. 0.
+end structure
+                  
+structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/WATER.pdb
+ number 19254
+ inside box -47. -47. -47. 47. 47. 47.
+end structure
+                  
+structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
+ number 981
+ inside box -47. -47. -47. 47. 47. 47.
+end structure
+                  
+structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/Cl_VSIL.pdb
+ number 981
+ inside box -47. -47. -47. 47. 47. 47.
+end structure

@@ -12,6 +12,6 @@ module IL_simulations
   include("./write_pack_input.jl")
   include("./topology.jl")
   include("./mddf_calculations.jl")
-  include("./utils.jl")
+  include("./util.jl")
 
 end
