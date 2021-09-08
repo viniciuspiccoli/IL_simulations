@@ -40,7 +40,7 @@ function mdp_files_solute()
   file=open("nvt.mdp","w")
   println(file,"""
   ; title                   = OPLS Ubiquitin solvated by water with a ionicliquid being a cosolute NVT equilibration 
-  define                  = -DPOSRES  ; position restrain the protein
+  ;define                  = -DPOSRES  ; position restrain the protein
   ; Run parameters
   integrator              = md        ; leap-frog integrator
   nsteps                  = 500000     ; 2 * 50000 = 1000 ps
@@ -82,8 +82,8 @@ function mdp_files_solute()
   gen_temp                = 300       ; temperature for Maxwell distribution
   gen_seed                = -1        ; generate a random seed
   
-  ;freezegrps              = Protein
-  ;freezedim               = X Y Z
+  freezegrps              = Protein
+  freezedim               = X Y Z
   """)
   close(file)
   
