@@ -120,35 +120,38 @@ function make_CMrun(data, systemPDB, natoms::Vector)
   # basic selections
   atoms   = readPDB("$systemPDB")
   prot    = select(atoms, "protein")
-  solute  = Selection(prot,nmols=1)
+  solute  = ComplexMixtures.Selection(prot,nmols=1)
 
   # selections for solvent components
   solv    = select(atoms,"resname $(cat[1:3])")
-  cation = Selection(solv, natomspermol=$(natoms[1]))
+  cation = ComplexMixtures.Selection(solv, natomspermol=$(natoms[1]))
   
   solv    = select(atoms,"resname $(an)")
-  anion  = Selection(solv, natomspermol=$(natoms[2]))
+  anion  = ComplexMixtures.Selection(solv, natomspermol=$(natoms[2]))
   
   solv    = select(atoms, "resname SOL")
-  water  = Selection(solv, natomspermol=3)
+  water  = ComplexMixtures.Selection(solv, natomspermol=3)
 
   # options for the calculation
   options = ComplexMixtures.Options(dbulk=20.,GC=true,GC_threshold=0.5)
 
   # cation calculation
-  trajectory = Trajectory("processed.xtc",solute,cation)
-  results = mddf(trajectory, options)
-  write(results,"gmd_$(cat[1:3]).dat")
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,cation)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"$(cat[1:3]).json")
+  ComplexMixtures.write(results,"gmd_$(cat[1:3]).dat")
 
   # anion calculation
-  trajectory = Trajectory("processed.xtc",solute,anion)
-  results = mddf(trajectory, options)
-  write(results,"gmd_$(an).dat")
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,anion)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"$(an).json")
+  ComplexMixtures.write(results,"gmd_$(an).dat")
 
   # water calculation
-  trajectory = Trajectory("processed.xtc",solute,water)
-  results = mddf(trajectory, options)
-  write(results,"gmd_SOL.dat")
+  trajectory = ComplexMxitures.Trajectory("processed.xtc",solute,water)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"SOL.json")
+  ComplexMixtures.write(results,"gmd_SOL.dat")
 
 """)
 
@@ -167,43 +170,47 @@ function make_CMrun2(data, systemPDB, natoms::Vector)
   # basic selections
   atoms   = readPDB("$systemPDB")
   prot    = select(atoms, "protein")
-  solute  = Selection(prot,nmols=1)
+  solute  = ComplexMixtures.Selection(prot,nmols=1)
 
   # selections for solvent components
   solv    = select(atoms,"resname $(cat[1:3])")
-  cation = Selection(solv, natomspermol=$(natoms[1]))
+  cation  =  ComplexMixtures.Selection(solv, natomspermol=$(natoms[1]))
   
   solv    = select(atoms,"resname $(an1)")
-  anion1  = Selection(solv, natomspermol=$(natoms[2]))
+  anion1  = ComplexMixtures.Selection(solv, natomspermol=$(natoms[2]))
   
   solv    = select(atoms,"resname $(an2)")
-  anion2  = Selection(solv, natomspermol=$(natoms[3]))
+  anion2  = ComplexMixtures.Selection(solv, natomspermol=$(natoms[3]))
 
   solv    = select(atoms, "resname SOL")
-  water  = Selection(solv, natomspermol=3)
+  water  =  ComplexMixtures.Selection(solv, natomspermol=3)
 
   # options for the calculation
   options = ComplexMixtures.Options(dbulk=20.,GC=true,GC_threshold=0.5)
 
   # cation calculation
-  trajectory = Trajectory("processed.xtc",solute,cation)
-  results = mddf(trajectory, options)
-  write(results,"gmd_$(cat[1:3]).dat")
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,cation)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"$(cat[1:3]).json")
+  ComplexMixtures.write(results,"gmd_$(cat[1:3]).dat")
 
   # anion 1 calculation
-  trajectory = Trajectory("processed.xtc",solute,anion1)
-  results = mddf(trajectory, options)
-  write(results,"gmd_$(an1).dat")
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,anion1)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"$(an1).json")
+  ComplexMixtures.write(results,"gmd_$(an1).dat")
 
   # anion 2 calculation
-  trajectory = Trajectory("processed.xtc",solute,anion2)
-  results = mddf(trajectory, options)
-  write(results,"gmd_$(an2).dat")
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,anion2)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"$(an2).json")
+  ComplexMixtures.write(results,"gmd_$(an2).dat")
 
   # water calculation
-  trajectory = Trajectory("processed.xtc",solute,water)
-  results = mddf(trajectory, options)
-  write(results,"gmd_SOL.dat")
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,water)
+  results = ComplexMixtures.mddf(trajectory, options)
+  ComplexMixtures.save(results,"SOL.json")
+  ComplexMixtures.write(results,"gmd_SOL.dat")
 
 """)
 
