@@ -148,7 +148,7 @@ function make_CMrun(data, systemPDB, natoms::Vector)
   ComplexMixtures.write(results,"gmd_$(an).dat")
 
   # water calculation
-  trajectory = ComplexMxitures.Trajectory("processed.xtc",solute,water)
+  trajectory = ComplexMixtures.Trajectory("processed.xtc",solute,water)
   results = ComplexMixtures.mddf(trajectory, options)
   ComplexMixtures.save(results,"SOL.json")
   ComplexMixtures.write(results,"gmd_SOL.dat")
