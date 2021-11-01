@@ -163,7 +163,15 @@ function make_CMrun2(data, systemPDB, natoms::Vector)
   io = open("analysis.jl","w")
   an1 = data.anion1
   an2 = data.anion2
-  cat = data.cation 
+  cat = data.cation
+  
+  # DCA is not the correct name for the selection of dycianamide.
+  if an1 == "DCA"
+    an1 = "NC"  
+  elseif an2 == "DCA"
+    an2 = "NC"
+  end
+
   println(io,"""    
   using PDBTools, ComplexMixtures
 
