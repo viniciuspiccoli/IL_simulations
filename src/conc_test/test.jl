@@ -56,7 +56,7 @@ let
     
       c = 3.0
       data = IL_simulations.Data_2il(protein="$input_dir/ubq.pdb", MMP = MMP, cation = cation, anion1 = anion1, anion2 = anion2, MM1 = MMIL1, MM2 = MMIL2 , c=c)
-      ncat, nan, nwater, sides = prot_melec(data)
+      ncat, nan, nwater, sides = protmelec2(data)
       println("data for the simulation - $il")
 
       println("==== Regular calculation")
