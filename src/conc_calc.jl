@@ -160,7 +160,7 @@ function protmelec2(data)
   nwat1 = num_wat(vs, v_il(nil,MM1) +  v_il(nil,MM2));                 # Número de moléculas de água para preencher, levando em conta os dois LIs
   nwat = nwat1
 
-  sides = [lx, ly, lz]
+  sides = [2*lx, 2*ly, 2*lz]
 
   return 2*nil, nil, nwat, sides
 
