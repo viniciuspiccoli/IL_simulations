@@ -1,6 +1,12 @@
 # IL_simulations
 
+Scripts to create directories with the required files for molecular dynamics simulations of systems with proteins and ionic liquid solutions.
+Here, the topol.top files are created for the protein Ubiquitin and using the ff OPLS-VSIL avaiable at...
+
 ## ajustar a documentacao
+
+### 1 - directories of PDB and FF files
+
 ```
 # example of input
 
