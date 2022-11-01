@@ -1,0 +1,25 @@
+tolerance 2.0
+output system.pdb
+add_box_sides 1.0
+filetype pdb
+seed -1
+                  
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/WATER.pdb
+ number 3322
+ inside box -25. -25. -25. 25. 25. 25.
+end structure
+                  
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/BMIM_VSIL.pdb
+ number 38
+ inside box -25. -25. -25. 25. 25. 25.
+end structure
+                  
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/NO3_VSIL.pdb
+ number 19
+ inside box -25. -25. -25. 25. 25. 25.
+end structure
+                  
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
+ number 19
+ inside box -25. -25. -25. 25. 25. 25.
+end structure

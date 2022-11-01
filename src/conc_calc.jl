@@ -205,3 +205,5 @@ function sol_melec(data; cube=false, charge=false)
 end
 
 
+# concentration calc based on Professor Leandro's script
+
