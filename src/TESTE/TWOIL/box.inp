@@ -18,7 +18,7 @@ structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.
  number 4
  inside box -25. -25. -25. 25. 25. 25.
 end structure
-                  
+                 
 structure /home/viniciusp/Documents/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
  number 4
  inside box -25. -25. -25. 25. 25. 25.
