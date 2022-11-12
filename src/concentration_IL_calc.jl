@@ -6,6 +6,45 @@ export prot_elec
 using PDBTools
 
 
+# Ionic liquid
+# [BMIM]BF 4
+# [HMIM]BF 4
+# [BMIM]PF 6
+# [HMIM]PF 6
+# a/(g/cm 3 )
+# 1.1811
+# 1.1242
+# 1.3381
+# 1.2596
+# b/10 -4 (g/cm 3 K)
+# 7.6229
+# 7.2090
+# 8.5275
+# 10.2938
+# Ionic liquid
+# [OMIM]PF 6
+# [HMIM]Cl
+# [OMIM]Cl
+# a/(g/cm 3 )
+# 1.1960
+# 1.0593
+# 0.9999
+# b/10 -4 (g/cm 3 K)
+# 9.2302
+# 6.3026
+# 3.6033
+
+'''
+    ref : Y. Q. Deng, Ionic liquid—Property, Preparation and Application, Beijing: China
+    petrochemical press, 2006.
+
+
+'''
+function fisher_density(a::Float64, b::Float64, T::Float64)
+    return a + b*(T-60)
+end
+
+
 # One IL + Water
 function sol_elec(data)
 
@@ -31,6 +70,29 @@ function sol_elec(data)
 end
 
 
+function ions_fisher_calc(data, a, b, T)
+
+  cation1 = data.cation 
+  anion1  = data.anion
+
+  MM1  = data.MM
+  c    = data.c
+  rho  =  fisher_density(a, b, T)*1.e-3
+
+  lx = 50
+  ly = 50 
+  lz = 50
+
+  sides = [lx, ly, lz]
+
+  vsol   = lx*ly*lz*1.e-27                                        # Volume (total=solution) / L  
+  nions  = round(Int64, vsol * c * 6.02e23)                       # number of ions 
+  vions  = nions * MM1 * rho / (6.02e23)                        # volume occupied by the ions
+  nwater = round(Int64,(vsol - vions) * 6.02e23 / (18*1.e-3))     # number of water molecules to fill the box
+
+  return nions, nwater, sides
+
+end
 
 
 
