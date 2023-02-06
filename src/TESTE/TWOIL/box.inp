@@ -4,22 +4,22 @@ add_box_sides 1.0
 filetype pdb
 seed -1
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/WATER.pdb
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/WATER.pdb
  number 3389
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
  number 38
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
  number 19
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/BF4_VSIL.pdb
+structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/BF4_VSIL.pdb
  number 19
  inside box -25. -25. -25. 25. 25. 25.
 end structure

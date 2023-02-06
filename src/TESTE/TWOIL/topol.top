@@ -6,12 +6,12 @@
 
       
 ; load atom types and molecules
-#include "/home/viniciusp/IL_simulations.jl/VSIL/ITP/DCA_atomtypes_VSIL.itp" 
-#include "/home/viniciusp/IL_simulations.jl/VSIL/ITP/BF4_atomtypes_VSIL.itp" 
-#include "/home/viniciusp/IL_simulations.jl/VSIL/ITP/EMIM_atomtypes_VSIL.itp" 
-#include "/home/viniciusp/IL_simulations.jl/VSIL/ITP/DCA_VSIL.itp" 
-#include "/home/viniciusp/IL_simulations.jl/VSIL/ITP/BF4_VSIL.itp" 
-#include "/home/viniciusp/IL_simulations.jl/VSIL/ITP/EMIM_VSIL.itp" 
+#include "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/DCA_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/BF4_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/EMIM_atomtypes_VSIL.itp" 
+#include "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/DCA_VSIL.itp" 
+#include "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/BF4_VSIL.itp" 
+#include "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP/EMIM_VSIL.itp" 
              
 ; Include water topology
 #include "oplsaa.ff/tip3p.itp"

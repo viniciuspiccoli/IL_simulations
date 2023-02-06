@@ -1,14 +1,14 @@
 using IL_simulations, PDBTools
 
-#top_dir     =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP"
-#pdb_dir     =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB"
-#input_dir   =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/ubiquitin_files"
-#top_ion_dir =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/ion_files"
+top_dir     =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/ITP"
+pdb_dir     =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB"
+input_dir   =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/ubiquitin_files"
+top_ion_dir =  "/home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/ion_files"
 
-top_dir     = "/home/viniciusp/IL_simulations.jl/VSIL/ITP"
-pdb_dir     = "/home/viniciusp/IL_simulations.jl/VSIL/PDB"
-input_dir   = "/home/viniciusp/IL_simulations.jl/ubiquitin_files"
-top_ion_dir = "/home/viniciusp/IL_simulations.jl/ion_files"
+#top_dir     = "/home/viniciusp/IL_simulations.jl/VSIL/ITP"
+#pdb_dir     = "/home/viniciusp/IL_simulations.jl/VSIL/PDB"
+#input_dir   = "/home/viniciusp/IL_simulations.jl/ubiquitin_files"
+#top_ion_dir = "/home/viniciusp/IL_simulations.jl/ion_files"
 println("passou dos diretorios")
 
 # function to calculate mass for atom type

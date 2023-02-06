@@ -4,17 +4,17 @@ add_box_sides 1.0
 filetype pdb
 seed -1
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/WATER.pdb
+structure ../../../IL_simulations.jl/VSIL/PDB/WATER.pdb
  number 3806
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
+structure ../../../IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
  number 38
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
-structure /home/viniciusp/IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
- number 38
- inside box -25. -25. -25. 25. 25. 25.
+structure ../../../IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
+  number 38
+  inside box -25. -25. -25. 25. 25. 25.
 end structure
