@@ -72,6 +72,33 @@ function sol_elec(data)
 
 end
 
+export solution_number
+# One IL + Water
+function solution_numbers(data, rho)
+
+  cation1 = data.cation 
+  anion1  = data.anion
+
+  MM1  = data.MM
+  c    = data.c
+
+  lx = 50
+  ly = 50 
+  lz = 50
+
+  sides = [lx, ly, lz]
+   
+  vbox = lx*ly*lz
+  CMC  = 6.02e23 / (1.e27)
+  cc = CMC * c # conversion of mol/L to molecules/Angs^3
+  nc = cc * vbox
+  nw = (6.02e23 * rho * vbox / 1.e24 - nc*data.MM) / 18.0158  
+
+  return nc, nw, sides
+
+end
+
+
 
 export prot_melec
 # two IL + Protein + Water
