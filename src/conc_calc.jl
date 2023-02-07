@@ -72,6 +72,8 @@ function sol_elec(data)
 
 end
 
+
+## funcao que serve para testar o método de cálculo
 export solution_number
 # One IL + Water
 function solution_numbers(data, rho)
