@@ -38,7 +38,7 @@ end
 cation  = "EMIM"
 anion1  = "DCA" 
 anion2  = "BF4"
-c       =  3.00
+concs   =  [0.50, 1.00, 1.50, 2.00, 2.50, 3.00]
 
 MMIL  = molarmass(anion1, cation, pdb_dir)
 MMIL2 = molarmass(anion2, cation, pdb_dir)
@@ -54,14 +54,25 @@ dir = pwd();
 #IL_simulations.mdp_files()
 
 
+for c in concs
+  println("***Concentration $c***")
   ### test with two ILs/salts - same cation
-  cd("TWOIL")
+  #cd("../TWOIL")
+  data = IL_simulations.Data_twoelec(cation = cation, anion1 = anion1, anion2 = anion2 , MM1 = MMIL, MM2 = MMIL2, c=c)
+  ncat, nan, nwater, sides = sol_melec(data)
+  println("===results from the old method===")
+  println("number of wat = $nwater")
+  println("number of cat = $ncat")
+  println("number of an1 = $nan")
+  println("number of an1 = $nan")
+  println("       ")
   data = IL_simulations.Data_twoelec(cation = cation, anion1 = anion1, anion2 = anion2 , MM1 = MMIL, MM2 = MMIL2, c=c)
   ncat, nan, nwater, sides = number_ions(data)
-  IL_simulations.pack_input_elec(data, pdb_dir, ncat, nan, nwater, sides)
-  IL_simulations.mdp_files()
-  IL_simulations.posre(input_dir)
-  IL_simulations.topelec(dict,top_dir, top_ion_dir, data, ncat, nan, nwater)
-  #IL_simulations.analyzeIN(pdb_dir,data)
-
-
+  println("===results from the old method===")
+  println("number of wat = $nwater")
+  println("number of cat = $ncat")
+  println("number of an1 = $nan")
+  println("number of an1 = $nan")                                                                                      #IL_simulations.topelec(dict,top_dir, top_ion_dir, data, ncat, nan, nwater)
+  #IL_simulations.pack_input_elec(data, pdb_dir, ncat, nan, nwater, sides)
+  #IL_simulations.mdp_files()
+end

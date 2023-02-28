@@ -199,9 +199,9 @@ function sol_melec(data; cube=false, charge=false)
   MM2  = data.MM2
   c    = data.c
 
-  lx = 50
-  ly = 50 
-  lz = 50
+  lx = 80
+  ly = 80 
+  lz = 80
 
   sides = [lx, ly, lz]
 

@@ -13,5 +13,6 @@ module IL_simulations
   include("./topology.jl")
   include("./mddf_calculations.jl")
   include("./util.jl")
+  include("./concentration_new.jl") 
 
 end

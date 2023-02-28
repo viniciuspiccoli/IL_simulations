@@ -32,7 +32,7 @@ Electrolyte solution
 
 [ molecules ]
 ; Compound        nmols 
-SOL                3389
-EMI                38
-NC                19
-BF4                19
+SOL                7217
+EMI                388
+NC                194
+BF4                194

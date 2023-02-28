@@ -5,16 +5,16 @@ filetype pdb
 seed -1
                   
 structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/WATER.pdb
- number 3806
+ number 1956
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
 structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/EMIM_VSIL.pdb
- number 38
+ number 226
  inside box -25. -25. -25. 25. 25. 25.
 end structure
                   
 structure /home/viniciusp/Insync/viniciuspiccoli2008@hotmail.com/OneDrive/Documents_linux/doutorado/ANALYSE/Repository/IL_simulations.jl/VSIL/PDB/DCA_VSIL.pdb
- number 38
+ number 226
  inside box -25. -25. -25. 25. 25. 25.
 end structure

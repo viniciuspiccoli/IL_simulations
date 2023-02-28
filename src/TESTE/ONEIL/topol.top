@@ -30,6 +30,6 @@ Electrolyte solution
 
 [ molecules ]
 ; Compound        nmols 
-SOL                3806
-EMI                38
-NC                38
+SOL                1956
+EMI                226
+NC                226

@@ -39,7 +39,7 @@ for i in ["0.50", "1.00", "1.50", "2.00", "2.50", "3.00"]
   for j in ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19","20"]
     cd("$dir/$il/$i/$j")
     conc = parse(Float64,i) 
-    data = IL_simulations.Data_il(protein="$input_dir/ubq.pdb", MMP = MMP, cation = cation, anion = anion,MM = MMIL,c=conc)
+    data = IL_simulations.Data_il(protein="$input_dir/ubq.pdb",MMP = MMP,cation = cation,anion = anion,MM = MMIL,c=conc)
     nions, nwater, sides = prot_elec(data)
     IL_simulations.top(dict, top_dir, input_dir, data, nions, nwater)
     IL_simulations.pack_input(data,pdb_dir,nions,nwater,sides)
