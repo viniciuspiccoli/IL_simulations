@@ -68,7 +68,7 @@ for c in concs
   println("       ")
   data = IL_simulations.Data_twoelec(cation = cation, anion1 = anion1, anion2 = anion2 , MM1 = MMIL, MM2 = MMIL2, c=c)
   ncat, nan, nwater, sides = number_ions(data)
-  println("===results from the old method===")
+  println("===results from the new method===")
   println("number of wat = $nwater")
   println("number of cat = $ncat")
   println("number of an1 = $nan")

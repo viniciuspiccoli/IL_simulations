@@ -1,0 +1,73 @@
+passou dos diretorios
+***Concentration 0.5***
+===results from the old method===
+number of wat = 13914
+number of cat = 154
+number of an1 = 77
+number of an1 = 77
+       
+===results from the new method===
+number of wat = 7217
+number of cat = 64
+number of an1 = 32
+number of an1 = 32
+***Concentration 1.0***
+===results from the old method===
+number of wat = 10704
+number of cat = 308
+number of an1 = 154
+number of an1 = 154
+       
+===results from the new method===
+number of wat = 7217
+number of cat = 130
+number of an1 = 65
+number of an1 = 65
+***Concentration 1.5***
+===results from the old method===
+number of wat = 7494
+number of cat = 462
+number of an1 = 231
+number of an1 = 231
+       
+===results from the new method===
+number of wat = 7217
+number of cat = 194
+number of an1 = 97
+number of an1 = 97
+***Concentration 2.0***
+===results from the old method===
+number of wat = 4284
+number of cat = 616
+number of an1 = 308
+number of an1 = 308
+       
+===results from the new method===
+number of wat = 7217
+number of cat = 258
+number of an1 = 129
+number of an1 = 129
+***Concentration 2.5***
+===results from the old method===
+number of wat = 1053
+number of cat = 771
+number of an1 = 386
+number of an1 = 386
+       
+===results from the new method===
+number of wat = 7217
+number of cat = 322
+number of an1 = 161
+number of an1 = 161
+***Concentration 3.0***
+===results from the old method===
+number of wat = -2157
+number of cat = 925
+number of an1 = 462
+number of an1 = 462
+       
+===results from the new method===
+number of wat = 7217
+number of cat = 388
+number of an1 = 194
+number of an1 = 194
