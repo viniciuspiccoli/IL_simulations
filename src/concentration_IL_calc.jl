@@ -54,9 +54,9 @@ function sol_elec(data)
   MM1  = data.MM
   c    = data.c
 
-  lx = 50
-  ly = 50 
-  lz = 50
+  lx = 60
+  ly = 60 
+  lz = 60
 
   sides = [lx, ly, lz]
 
